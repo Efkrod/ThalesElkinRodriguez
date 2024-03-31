@@ -1,0 +1,18 @@
+﻿@model ErrorViewModel
+@{
+    ViewData["Title"] = "Error";
+}
+
+<h1 class="text-danger">Error.</h1>
+<h2 class="text-danger">An error occurred while processing your request.</h2>
+
+@if (!string.IsNullOrEmpty(ViewData["ErrorMessage"] as string))
+{
+    <p class="text-danger">
+        <strong>Error Message:</strong> @ViewData["ErrorMessage"]
+    </p>
+}
+
+<div>
+    <a asp-action="Index" asp-controller="Employee" class="btn btn-primary">Back to Employee Index</a>
+</div>

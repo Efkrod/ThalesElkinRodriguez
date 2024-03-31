@@ -1,0 +1,41 @@
+﻿@model List<Employee>
+
+<h1>List of Employees</h1>
+
+<form asp-action="Index" method="get">
+    <div class="form-group">
+        <label for="employeeId">Employee ID:</label>
+        <input type="text" class="form-control" id="employeeId" name="id" value="">
+    </div>
+    <button type="submit" class="btn btn-primary">Search</button>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Annual Salary</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var employee in Model)
+        {
+            <tr>
+                <td>@employee.id</td>
+                <td>@employee.employee_name</td>
+                <td>@employee.employee_age</td>
+                @* <td>@((employee.employee_age).ToString("C"))</td> *@
+                @if (ViewBag.AnnualSalaries != null)
+                {
+                    foreach (var annualSalary in ViewBag.AnnualSalaries)
+                    {
+                        <td>@((int)annualSalary).ToString("C")</td>
+                    }
+                    
+                }
+            </tr>
+        }
+    </tbody>
+</table>
