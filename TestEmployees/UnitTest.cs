@@ -1,5 +1,6 @@
 using Xunit;
 using ThalesElkinRodriguez.BLL;
+using ThalesElkinRodriguez.Models;
 
 namespace TestEmployees
 {
@@ -9,10 +10,16 @@ namespace TestEmployees
         public void TestAnnualSalary()
         {
             //Arrange
-            var employee = new EmployeeAnualSalary();
+            var employee = new Employee
+            {
+                id = 1,
+                employee_name = "John Due",
+                employee_salary = 1200,
+                employee_age = 60
+            };
 
             //Act
-            var annualSalary = employee.CalculateAnnualSalary(1200);
+            var annualSalary = EmployeeAnualSalary.CalculateAnnualSalary(employee);
 
             //Assert
             Assert.Equal(14400, annualSalary);
