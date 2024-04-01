@@ -11,11 +11,9 @@
         <dt class="col-sm-2">Age</dt>
         <dd class="col-sm-10">@Model.employee_age</dd>
         <dt class="col-sm-2">Annual Salary</dt>
-        <dd class="col-sm-10">
             @if (ViewBag.AnnualSalaryById != null)
             {
-                <td>@((int)ViewBag.AnnualSalaryById).ToString("C")</td>
+                <dd>@((int)ViewBag.AnnualSalaryById).ToString("C")</dd>
             }
-        </dd>
     </dl>
 </div>
