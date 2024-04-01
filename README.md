@@ -10,5 +10,5 @@ Este proyecto es una aplicación web que consume una API de empleados y realiza 
 ## Clonación del Proyecto
 
 1. Clona este repositorio en tu máquina local utilizando Git:
-2. Instala x.unit, coverlet.collector
+2. Instala paquetes nuget x.unit, coverlet.collector
 3. Actualiza paquetes nugets
